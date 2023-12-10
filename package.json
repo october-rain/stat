@@ -1,10 +1,14 @@
 {
-  "name": "stat",
+  "name": "rain-stat",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "rain-stat": "src/index.js"
   },
   "keywords": [],
   "author": "",
