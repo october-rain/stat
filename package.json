@@ -1,6 +1,6 @@
 {
   "name": "rain-stat",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "方便快速的获取主机的信息",
   "main": "index.js",
   "type": "module",
