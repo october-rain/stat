@@ -3,18 +3,23 @@ import os from "node:os"
 import si from "systeminformation"
 
 // 使用 os 模块获取基本信息
-function getBasicSystemInfo() {
+export const getBasicSystemInfo = () => {
+  const platform = os.platform()
+  const release = os.release()
+  const cpuArch = os.arch()
+  const totalMem = os.totalmem()
+  const freeMem = os.freemem()
   return {
-    platform: os.platform(),
-    release: os.release(),
-    cpuArch: os.arch(),
-    totalMem: os.totalmem(),
-    freeMem: os.freemem(),
+    platform,
+    release,
+    cpuArch,
+    totalMem,
+    freeMem,
   }
 }
 
 // 使用 systeminformation 获取更详细的信息
-async function getDetailedSystemInfo() {
+export async function getDetailedSystemInfo() {
   const cpuInfo = await si.cpu()
   const diskInfo = await si.diskLayout()
   const networkInfo = await si.networkInterfaces()
@@ -26,6 +31,4 @@ async function getDetailedSystemInfo() {
   }
 }
 
-// 示例函数调用
-console.log(getBasicSystemInfo())
-getDetailedSystemInfo().then(console.log)
+getDetailedSystemInfo();

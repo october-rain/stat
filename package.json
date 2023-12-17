@@ -1,22 +1,33 @@
 {
   "name": "rain-stat",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "方便快速的获取主机的信息",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "bin": {
-    "rain-stat": "src/index.js"
+    "rain-stat": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --target es6 --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --target es6 --format cjs,esm --dts --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
+    "boxen": "^7.1.1",
+    "chalk": "^5.3.0",
     "commander": "^11.1.0",
-    "inquirer": "^9.2.12",
-    "ora": "^7.0.1",
+    "figlet": "^1.7.0",
     "systeminformation": "^5.21.20"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^20.10.4",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
   }
 }
